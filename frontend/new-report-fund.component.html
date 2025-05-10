@@ -1,0 +1,163 @@
+<div id="angular-material" class="page-layout simple tabbed">
+    <div class="header accent p-24 h-160" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="row"
+         fxLayoutAlign.gt-xs="space-between center">
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="column" fxLayoutAlign.gt-xs="center start">
+            <div fxLayout="row" fxLayoutAlign="start center" fxShow fxHide.lt-md>
+                <span class="secondary-text">{{ 'REP_PATH' | translate }}</span>
+                <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+                <span class="secondary-text">{{ 'REP_GROUPFUND' | translate }}</span>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="start center" class="mt-16">
+                <div fxLayout="row" fxLayoutAlign="start center" class="h1 tooltip-header-hover">
+                    {{ 'REP_FUNDREPORT' | translate }}
+                    <button class="tooltip-header" (click)="toggleSidebarOpen('tooltipPanel', 'REP_FUNDREPORT')">
+                        <span class="text">?</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="card-input-container">
+            <div class="card-input-header">{{ 'BTN_SEARCH' | translate }}</div>
+            <div class="card-input-body">
+                <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="8px">
+                    <div fxLayout="column" fxFlex>
+                        <label>{{ 'LOV_COMPANY' | translate }}</label>
+                        <nz-tree-select 
+                            [nzNodes]="orgsNodes" 
+                            nzPlaceHolder="{{'LOV_ALL' | translate}}"
+                            [(ngModel)]="orgValue" 
+                            (ngModelChange)="orgChange($event)"
+                            [nzDefaultExpandAll]="true"
+                            [nzAllowClear]="true" 
+                            [nzDropdownStyle]="{ 'max-height': '280px' }">
+                        </nz-tree-select>
+                    </div>
+                    <div fxLayout="column" fxFlex>
+                        <label>{{ 'REP_FUND' | translate }}</label>
+                        <nz-tree-select
+                            [nzNodes]="fundList"
+                            [(ngModel)]="selectedFundIds"
+                            nzMultiple
+                            nzCheckable="true"
+                            [nzAllowClear]="true"
+                            [nzDefaultExpandAll]="true"
+                            [nzDropdownStyle]="{ 'max-height': '400px' }"
+                            [nzPlaceHolder]="'เลือกกองทุน'"
+                            [nzShowSearch]="true"
+                            [nzDropdownMatchSelectWidth]="false"
+                            [nzMaxTagCount]="3"
+                            [nzMaxTagPlaceholder]="selectedFundsTemplate">
+                        </nz-tree-select>
+                    </div>
+                    <div fxLayout="column" fxFlex>
+                        <label>{{ 'LOV_MONTH' | translate }}</label>
+                        <nz-range-picker
+                            [ngModel]="[filterData.start_month, filterData.end_month]"
+                            nzMode="month"
+                            [nzFormat]="'MMMM yyyy'"
+                            (ngModelChange)="onMonthRangeChange($event)"
+                            [nzPlaceHolder]="['เดือนเริ่มต้น', 'เดือนสิ้นสุด']"
+                            [nzDisabledDate]="disabledDate"
+                            [nzShowToday]="false">
+                        </nz-range-picker>
+                    </div>
+                </div>
+            </div>
+            <div class="card-input-footer">
+                <div fxLayout="row" fxLayoutAlign="end end">
+                    <div fxLayout="column" class="mr-8">
+                        <button mat-raised-button color="primary" (click)="downloadFile('pdf')"
+                                [disabled]="!reportData">
+                            PDF
+                            <mat-icon fxShow fxHide.lt-md>picture_as_pdf</mat-icon>
+                        </button>
+                    </div>
+                    <div fxLayout="column" class="mr-8">
+                        <button mat-raised-button class="green fuse-white-fg"
+                                (click)="downloadFile('excel')"
+                                [disabled]="!reportData">
+                            <span>Excel</span>
+                            <mat-icon fxShow fxHide.lt-md>border_all</mat-icon>
+                        </button>
+                    </div>
+                    <div fxLayout="column">
+                        <button mat-raised-button color="accent" (click)="getData()">
+                            <span>{{ 'BTN_SEARCH' | translate }}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="isLoading" class="loading-overlay">
+            <nz-spin nzSimple></nz-spin>
+        </div>
+
+        <div *ngIf="!isLoading && !reportData" class="no-data-message">
+            <nz-empty nzNotFoundContent="ไม่พบข้อมูล"></nz-empty>
+        </div>
+
+        <div *ngIf="!isLoading && reportData" class="report-container">
+            <nz-table 
+                [nzData]="reportData.rows"
+                nzBordered
+                [nzFrontPagination]="false"
+                [nzShowPagination]="false"
+                [nzScroll]="{ x: '100%' }">
+                <thead>
+                    <tr>
+                        <th *ngFor="let column of reportData.columns[0]" 
+                            [attr.colspan]="column.colspan"
+                            [attr.rowspan]="column.rowspan"
+                            [style.text-align]="column.align">
+                            {{ column.data }}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of reportData.rows">
+                        <td *ngFor="let cell of row"
+                            [attr.colspan]="cell.colspan"
+                            [style.text-align]="cell.align"
+                            [style.color]="cell.color">
+                            <ng-container *ngIf="cell.setdate === 'Y'">
+                                {{ cell.data | date:'dd/MM/yyyy' }}
+                            </ng-container>
+                            <ng-container *ngIf="cell.setint === 'Y'">
+                                {{ cell.data | number:'1.2-2' }}
+                            </ng-container>
+                            <ng-container *ngIf="!cell.setdate && !cell.setint">
+                                {{ cell.data }}
+                            </ng-container>
+                        </td>
+                    </tr>
+                </tbody>
+            </nz-table>
+
+            <div class="report-summary" *ngIf="reportData.summary">
+                <h3>{{ 'REPORT_SUMMARY' | translate }}</h3>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <label>{{ 'TOTAL_EMPLOYEES' | translate }}:</label>
+                        <span>{{ reportData.summary.total_employees }}</span>
+                    </div>
+                    <div class="summary-item">
+                        <label>{{ 'TOTAL_EMPLOYEE_CONTRIBUTION' | translate }}:</label>
+                        <span>{{ reportData.summary.total_employee_contribution | number:'1.2-2' }}</span>
+                    </div>
+                    <div class="summary-item">
+                        <label>{{ 'TOTAL_COMPANY_CONTRIBUTION' | translate }}:</label>
+                        <span>{{ reportData.summary.total_company_contribution | number:'1.2-2' }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #selectedFundsTemplate let-selectedList>
+        +{{selectedList.length - 3}} กองทุน
+    </ng-template>
+</div> 

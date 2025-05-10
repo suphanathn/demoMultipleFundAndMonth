@@ -1,0 +1,19 @@
+{
+    "company_lists": [
+        {
+            "id": "MjAyNDEyMThBNzhDQzQ1MTYzMEM="
+        }
+    ],
+    "branch_lists": [],
+    "department_lists": [],
+    "type": "json",
+    "year_month": "2025-05",
+    "fund_id": "MjAyNTA1MDdERTYxMDQ1QjkyOUU=",
+    "_compgrp": "hrs",
+    "_comp": "report",
+    "_action": "fund",
+    "identify_user_id": "MjAyNTA0MzA4MTUwRkRDRDlEQzU=",
+    "instance_server_id": "MjAyMjA0MDE1OEQ4Rjk1N0JEMjk=",
+    "instance_server_channel_id": "MjAyNDEyMTgzMDM1Rjg5MzRENkY=",
+    "language_code": "TH"
+}

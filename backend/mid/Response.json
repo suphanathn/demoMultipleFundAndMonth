@@ -1,0 +1,736 @@
+{
+  "code": "200",
+  "message": "Report data successfully generated.",
+  "payload": {
+    "months": [
+      {
+        "master_salary_month": "2025-01",
+        "salary_report_start_dt": "2024-12-26 00:00:00",
+        "salary_report_end_dt": "2025-01-25 23:59:59"
+      },
+      {
+        "master_salary_month": "2025-02",
+        "salary_report_start_dt": "2025-01-26 00:00:00",
+        "salary_report_end_dt": "2025-02-25 23:59:59"
+      },
+      {
+        "master_salary_month": "2025-03",
+        "salary_report_start_dt": "2025-02-26 00:00:00",
+        "salary_report_end_dt": "2025-03-25 23:59:59"
+      },
+      {
+        "master_salary_month": "2025-04",
+        "salary_report_start_dt": "2025-03-26 00:00:00",
+        "salary_report_end_dt": "2025-04-25 23:59:59"
+      },
+      {
+        "master_salary_month": "2025-05",
+        "salary_report_start_dt": "2025-04-26 00:00:00",
+        "salary_report_end_dt": "2025-05-25 23:59:59"
+      }
+    ],
+    "fund_Lists": [
+      {
+        "fund_id": "20241218A35EE79F7B49",
+        "fund_name": "กองทุนสำรองเลี้ยงชีพ",
+        "salary_type_name": "กองทุนสำรองเลี้ยงชีพ",
+        "salary_type_name_en": "Provident Fund"
+      },
+      {
+        "fund_id": "20250507DE61045B929E",
+        "fund_name": "FUND 01",
+        "salary_type_name": "FUND 01",
+        "salary_type_name_en": "FUND 01"
+      },
+      {
+        "fund_id": "202501060ACDF9B184D8",
+        "fund_name": "aas",
+        "salary_type_name": "aas",
+        "salary_type_name_en": "asdas"
+      }
+    ],
+    "employee_data": {
+      "20250507DE61045B929E": {
+        "20250314744B72F03BC5": {
+          "employee_code": "680001",
+          "employee_name": "บัลลังค์",
+          "date_register": null,
+          "date": "2025-05-07",
+          "employee_contribution": "75000.00",
+          "company_contribution": "75000.00"
+        },
+        "20250430DD187D7D5E4E": {
+          "employee_code": "680004",
+          "employee_name": "ณิชา",
+          "date_register": null,
+          "date": "2025-05-08",
+          "employee_contribution": "6250.00",
+          "company_contribution": "6250.00"
+        },
+        "202412183DC43FCF9A39": {
+          "employee_code": "670025",
+          "employee_name": "เดียว",
+          "date_register": null,
+          "date": "2025-06-04",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "202412181046A38C4AD6": {
+          "employee_code": "670030",
+          "employee_name": "แคทเธอร์รีน",
+          "date_register": null,
+          "date": "2025-06-09",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "20241218D71761BB90D1": {
+          "employee_code": "670018",
+          "employee_name": "ทอม",
+          "date_register": null,
+          "date": "2025-05-28",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "20241218110BC78D4B47": {
+          "employee_code": "670035",
+          "employee_name": "ชาร์ลอต",
+          "date_register": null,
+          "date": "2025-06-14",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "202412189791C3D4D2B0": {
+          "employee_code": "670019",
+          "employee_name": "ซูฉี",
+          "date_register": null,
+          "date": "2025-05-29",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "202412185E031D9C75C6": {
+          "employee_code": "670024",
+          "employee_name": "ก้อง",
+          "date_register": null,
+          "date": "2025-06-03",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "20241218ED318AEA25BF": {
+          "employee_code": "670032",
+          "employee_name": "เบบี้",
+          "date_register": null,
+          "date": "2025-06-11",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "20241218BC61B58AB20B": {
+          "employee_code": "670007",
+          "employee_name": "รุจี",
+          "date_register": null,
+          "date": "2025-05-17",
+          "employee_contribution": "600.00",
+          "company_contribution": "600.00"
+        },
+        "202412186773392801BB": {
+          "employee_code": "670029",
+          "employee_name": "ขวัญชาติ",
+          "date_register": null,
+          "date": "2025-06-08",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "20241218B32F33F668E0": {
+          "employee_code": "670004",
+          "employee_name": "ภูผา",
+          "date_register": null,
+          "date": "2025-05-14",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "202412181E7F46447C3E": {
+          "employee_code": "670026",
+          "employee_name": "เจี๊ยบ",
+          "date_register": null,
+          "date": "2025-06-05",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "20241218D23ACB8D9609": {
+          "employee_code": "670009",
+          "employee_name": "ต้นตระกูล",
+          "date_register": null,
+          "date": "2025-05-19",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "202504306688E0A90708": {
+          "employee_code": "680006",
+          "employee_name": "ณิชา",
+          "date_register": null,
+          "date": "2025-06-20",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "202412187E8D381A78D2": {
+          "employee_code": "670013",
+          "employee_name": "ปุ้ม",
+          "date_register": null,
+          "date": "2025-05-23",
+          "employee_contribution": "5625.00",
+          "company_contribution": "5625.00"
+        },
+        "20241218B444A0C6E681": {
+          "employee_code": "670028",
+          "employee_name": "วรรุจน์",
+          "date_register": null,
+          "date": "2025-06-07",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "20241218417E87162222": {
+          "employee_code": "670023",
+          "employee_name": "หยาดเพชร",
+          "date_register": null,
+          "date": "2025-06-02",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "2024121806B67CAAB1D4": {
+          "employee_code": "670022",
+          "employee_name": "สมิทธิ์",
+          "date_register": null,
+          "date": "2025-06-01",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "20241218E806F2F82559": {
+          "employee_code": "670003",
+          "employee_name": "วิทยา",
+          "date_register": null,
+          "date": "2025-05-13",
+          "employee_contribution": "8250.00",
+          "company_contribution": "8250.00"
+        },
+        "2024121835C470183738": {
+          "employee_code": "670001",
+          "employee_name": "โจศักดิ์",
+          "date_register": null,
+          "date": "2025-05-11",
+          "employee_contribution": "1800.00",
+          "company_contribution": "1800.00"
+        },
+        "20241218D0353A580D6B": {
+          "employee_code": "670031",
+          "employee_name": "ดารา",
+          "date_register": null,
+          "date": "2025-06-10",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "20241218FD4E33ECE2CE": {
+          "employee_code": "670017",
+          "employee_name": "ชาตรี",
+          "date_register": null,
+          "date": "2025-05-27",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "20241218601366D284D7": {
+          "employee_code": "670010",
+          "employee_name": "โฉมงาม",
+          "date_register": null,
+          "date": "2025-05-20",
+          "employee_contribution": "6000.00",
+          "company_contribution": "6000.00"
+        },
+        "2024121854D11AEE5C83": {
+          "employee_code": "670034",
+          "employee_name": "บัวลอย",
+          "date_register": null,
+          "date": "2025-06-13",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "20241218B6E5D7A52656": {
+          "employee_code": "670038",
+          "employee_name": "เอกกี้",
+          "date_register": null,
+          "date": "2025-06-17",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "20241218544E2C7560BD": {
+          "employee_code": "670033",
+          "employee_name": "ซิ่วหลัน",
+          "date_register": null,
+          "date": "2025-06-12",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "20250429897427C4C258": {
+          "employee_code": "680003",
+          "employee_name": "บอส",
+          "date_register": null,
+          "date": "2025-05-10",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "202412186AEC331E2A47": {
+          "employee_code": "670040",
+          "employee_name": "พล่ากุ้ง",
+          "date_register": null,
+          "date": "2025-06-19",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "202412184DDFA3F9EDBA": {
+          "employee_code": "670015",
+          "employee_name": "ดี๋",
+          "date_register": null,
+          "date": "2025-05-25",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "20241218C9C78F376CD5": {
+          "employee_code": "670037",
+          "employee_name": "เพลิงพยัคฆ์",
+          "date_register": null,
+          "date": "2025-06-16",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "20241218AAB3B105DCDB": {
+          "employee_code": "670011",
+          "employee_name": "ต่อตระกูล",
+          "date_register": null,
+          "date": "2025-05-21",
+          "employee_contribution": "8750.00",
+          "company_contribution": "8750.00"
+        },
+        "20241218FA1B74D6CF20": {
+          "employee_code": "670005",
+          "employee_name": "ธิดา",
+          "date_register": null,
+          "date": "2025-05-15",
+          "employee_contribution": "8000.00",
+          "company_contribution": "8000.00"
+        },
+        "20241218185E6B2DD2C7": {
+          "employee_code": "670008",
+          "employee_name": "จ่ารุจน์",
+          "date_register": null,
+          "date": "2025-05-18",
+          "employee_contribution": "6189.00",
+          "company_contribution": "6189.00"
+        },
+        "20241218F73D21649810": {
+          "employee_code": "670021",
+          "employee_name": "มาโนช",
+          "date_register": null,
+          "date": "2025-05-31",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "20241218F49CF86640B7": {
+          "employee_code": "670036",
+          "employee_name": "หนูแดง",
+          "date_register": null,
+          "date": "2025-06-15",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "20241218333569F1062B": {
+          "employee_code": "670006",
+          "employee_name": "รุจน์",
+          "date_register": null,
+          "date": "2025-05-16",
+          "employee_contribution": "600.00",
+          "company_contribution": "600.00"
+        },
+        "20250430108B02830EAF": {
+          "employee_code": "680005",
+          "employee_name": "ณิชา",
+          "date_register": null,
+          "date": "2025-05-09",
+          "employee_contribution": "6250.00",
+          "company_contribution": "6250.00"
+        },
+        "20241218102C5D5E909A": {
+          "employee_code": "670039",
+          "employee_name": "สงกรานต์",
+          "date_register": null,
+          "date": "2025-06-18",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "20241218E571185A96C1": {
+          "employee_code": "670014",
+          "employee_name": "พริกแกง",
+          "date_register": null,
+          "date": "2025-05-24",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "20241218A2D7E25C90D9": {
+          "employee_code": "670016",
+          "employee_name": "คิมหันต์",
+          "date_register": null,
+          "date": "2025-05-26",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "20241218F779D0A4CD59": {
+          "employee_code": "670012",
+          "employee_name": "พายุ",
+          "date_register": null,
+          "date": "2025-05-22",
+          "employee_contribution": "10000.00",
+          "company_contribution": "10000.00"
+        },
+        "2024121843CDFB819E7B": {
+          "employee_code": "670002",
+          "employee_name": "ขวัญใจ",
+          "date_register": null,
+          "date": "2025-05-12",
+          "employee_contribution": "800.00",
+          "company_contribution": "800.00"
+        },
+        "20241218CF948383BB51": {
+          "employee_code": "670020",
+          "employee_name": "ไฉไล",
+          "date_register": null,
+          "date": "2025-05-30",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        },
+        "2024121826B4FF826088": {
+          "employee_code": "670027",
+          "employee_name": "วิกานต์ดา",
+          "date_register": null,
+          "date": "2025-06-06",
+          "employee_contribution": "0.00",
+          "company_contribution": "0.00"
+        }
+      },
+      "20241218A35EE79F7B49": {
+        "2024121835C470183738": {
+          "employee_code": "670001",
+          "employee_name": "โจศักดิ์",
+          "date_register": null,
+          "date": "2025-02-24",
+          "employee_contribution": "12.00",
+          "company_contribution": "12.00"
+        }
+      }
+    },
+    "report_array": {
+      "20241218A78CC451630C": {
+        "name": "ฮิวแมนซอฟต์",
+        "branches": {
+          "202412185C4D6A7D55F2": {
+            "name": "ฮิวแมนซอฟต์ (สำนักงานใหญ่)",
+            "departments": {
+              "20241218253C9DC68C9E": {
+                "name": "แผนกนักทดสอบ",
+                "employees": {
+                  "2024121806B67CAAB1D4": {
+                    "employee_id": "2024121806B67CAAB1D4",
+                    "employee_code": "670022",
+                    "employee_name": "สมิทธิ์",
+                    "employee_last_name": "พาร์ทไทม์"
+                  },
+                  "20241218102C5D5E909A": {
+                    "employee_id": "20241218102C5D5E909A",
+                    "employee_code": "670039",
+                    "employee_name": "สงกรานต์",
+                    "employee_last_name": "เหมาจ่าย"
+                  },
+                  "202412181046A38C4AD6": {
+                    "employee_id": "202412181046A38C4AD6",
+                    "employee_code": "670030",
+                    "employee_name": "แคทเธอร์รีน",
+                    "employee_last_name": "พาร์ทไทม์"
+                  },
+                  "20241218110BC78D4B47": {
+                    "employee_id": "20241218110BC78D4B47",
+                    "employee_code": "670035",
+                    "employee_name": "ชาร์ลอต",
+                    "employee_last_name": "เหมาจ่าย"
+                  },
+                  "20241218185E6B2DD2C7": {
+                    "employee_id": "20241218185E6B2DD2C7",
+                    "employee_code": "670008",
+                    "employee_name": "จ่ารุจน์",
+                    "employee_last_name": "รายวัน"
+                  },
+                  "202412181E7F46447C3E": {
+                    "employee_id": "202412181E7F46447C3E",
+                    "employee_code": "670026",
+                    "employee_name": "เจี๊ยบ",
+                    "employee_last_name": "พาร์ทไทม์"
+                  },
+                  "2024121826B4FF826088": {
+                    "employee_id": "2024121826B4FF826088",
+                    "employee_code": "670027",
+                    "employee_name": "วิกานต์ดา",
+                    "employee_last_name": "พาร์ทไทม์"
+                  },
+                  "20241218333569F1062B": {
+                    "employee_id": "20241218333569F1062B",
+                    "employee_code": "670006",
+                    "employee_name": "รุจน์",
+                    "employee_last_name": "รายวัน"
+                  },
+                  "2024121835C470183738": {
+                    "employee_id": "2024121835C470183738",
+                    "employee_code": "670001",
+                    "employee_name": "โจศักดิ์",
+                    "employee_last_name": "รายวัน"
+                  },
+                  "202412183DC43FCF9A39": {
+                    "employee_id": "202412183DC43FCF9A39",
+                    "employee_code": "670025",
+                    "employee_name": "เดียว",
+                    "employee_last_name": "พาร์ทไทม์"
+                  },
+                  "20241218417E87162222": {
+                    "employee_id": "20241218417E87162222",
+                    "employee_code": "670023",
+                    "employee_name": "หยาดเพชร",
+                    "employee_last_name": "พาร์ทไทม์"
+                  },
+                  "2024121843CDFB819E7B": {
+                    "employee_id": "2024121843CDFB819E7B",
+                    "employee_code": "670002",
+                    "employee_name": "ขวัญใจ",
+                    "employee_last_name": "รายวัน"
+                  },
+                  "202412184DDFA3F9EDBA": {
+                    "employee_id": "202412184DDFA3F9EDBA",
+                    "employee_code": "670015",
+                    "employee_name": "ดี๋",
+                    "employee_last_name": "รายเดือน"
+                  },
+                  "20241218544E2C7560BD": {
+                    "employee_id": "20241218544E2C7560BD",
+                    "employee_code": "670033",
+                    "employee_name": "ซิ่วหลัน",
+                    "employee_last_name": "เหมาจ่าย"
+                  },
+                  "2024121854D11AEE5C83": {
+                    "employee_id": "2024121854D11AEE5C83",
+                    "employee_code": "670034",
+                    "employee_name": "บัวลอย",
+                    "employee_last_name": "เหมาจ่าย"
+                  },
+                  "202412185E031D9C75C6": {
+                    "employee_id": "202412185E031D9C75C6",
+                    "employee_code": "670024",
+                    "employee_name": "ก้อง",
+                    "employee_last_name": "พาร์ทไทม์"
+                  },
+                  "20241218601366D284D7": {
+                    "employee_id": "20241218601366D284D7",
+                    "employee_code": "670010",
+                    "employee_name": "โฉมงาม",
+                    "employee_last_name": "รายวัน"
+                  },
+                  "202412186773392801BB": {
+                    "employee_id": "202412186773392801BB",
+                    "employee_code": "670029",
+                    "employee_name": "ขวัญชาติ",
+                    "employee_last_name": "พาร์ทไทม์"
+                  },
+                  "202412186AEC331E2A47": {
+                    "employee_id": "202412186AEC331E2A47",
+                    "employee_code": "670040",
+                    "employee_name": "พล่ากุ้ง",
+                    "employee_last_name": "เหมาจ่าย"
+                  },
+                  "202412187E8D381A78D2": {
+                    "employee_id": "202412187E8D381A78D2",
+                    "employee_code": "670013",
+                    "employee_name": "ปุ้ม",
+                    "employee_last_name": "รายเดือน"
+                  },
+                  "202412189791C3D4D2B0": {
+                    "employee_id": "202412189791C3D4D2B0",
+                    "employee_code": "670019",
+                    "employee_name": "ซูฉี",
+                    "employee_last_name": "รายเดือน"
+                  },
+                  "20241218A2D7E25C90D9": {
+                    "employee_id": "20241218A2D7E25C90D9",
+                    "employee_code": "670016",
+                    "employee_name": "คิมหันต์",
+                    "employee_last_name": "รายเดือน"
+                  },
+                  "20241218AAB3B105DCDB": {
+                    "employee_id": "20241218AAB3B105DCDB",
+                    "employee_code": "670011",
+                    "employee_name": "ต่อตระกูล",
+                    "employee_last_name": "รายเดือน"
+                  },
+                  "20241218B32F33F668E0": {
+                    "employee_id": "20241218B32F33F668E0",
+                    "employee_code": "670004",
+                    "employee_name": "ภูผา",
+                    "employee_last_name": "รายวัน"
+                  },
+                  "20241218B444A0C6E681": {
+                    "employee_id": "20241218B444A0C6E681",
+                    "employee_code": "670028",
+                    "employee_name": "วรรุจน์",
+                    "employee_last_name": "พาร์ทไทม์"
+                  },
+                  "20241218B6E5D7A52656": {
+                    "employee_id": "20241218B6E5D7A52656",
+                    "employee_code": "670038",
+                    "employee_name": "เอกกี้",
+                    "employee_last_name": "เหมาจ่าย"
+                  },
+                  "20241218BC61B58AB20B": {
+                    "employee_id": "20241218BC61B58AB20B",
+                    "employee_code": "670007",
+                    "employee_name": "รุจี",
+                    "employee_last_name": "รายวัน"
+                  },
+                  "20241218C9C78F376CD5": {
+                    "employee_id": "20241218C9C78F376CD5",
+                    "employee_code": "670037",
+                    "employee_name": "เพลิงพยัคฆ์",
+                    "employee_last_name": "เหมาจ่าย"
+                  },
+                  "20241218CF948383BB51": {
+                    "employee_id": "20241218CF948383BB51",
+                    "employee_code": "670020",
+                    "employee_name": "ไฉไล",
+                    "employee_last_name": "รายเดือน"
+                  },
+                  "20241218D0353A580D6B": {
+                    "employee_id": "20241218D0353A580D6B",
+                    "employee_code": "670031",
+                    "employee_name": "ดารา",
+                    "employee_last_name": "เหมาจ่าย"
+                  },
+                  "20241218D23ACB8D9609": {
+                    "employee_id": "20241218D23ACB8D9609",
+                    "employee_code": "670009",
+                    "employee_name": "ต้นตระกูล",
+                    "employee_last_name": "รายวัน"
+                  },
+                  "20241218D71761BB90D1": {
+                    "employee_id": "20241218D71761BB90D1",
+                    "employee_code": "670018",
+                    "employee_name": "ทอม",
+                    "employee_last_name": "รายเดือน"
+                  },
+                  "20241218E571185A96C1": {
+                    "employee_id": "20241218E571185A96C1",
+                    "employee_code": "670014",
+                    "employee_name": "พริกแกง",
+                    "employee_last_name": "รายเดือน"
+                  },
+                  "20241218E806F2F82559": {
+                    "employee_id": "20241218E806F2F82559",
+                    "employee_code": "670003",
+                    "employee_name": "วิทยา",
+                    "employee_last_name": "รายวัน"
+                  },
+                  "20241218ED318AEA25BF": {
+                    "employee_id": "20241218ED318AEA25BF",
+                    "employee_code": "670032",
+                    "employee_name": "เบบี้",
+                    "employee_last_name": "เหมาจ่าย"
+                  },
+                  "20241218F49CF86640B7": {
+                    "employee_id": "20241218F49CF86640B7",
+                    "employee_code": "670036",
+                    "employee_name": "หนูแดง",
+                    "employee_last_name": "เหมาจ่าย"
+                  },
+                  "20241218F73D21649810": {
+                    "employee_id": "20241218F73D21649810",
+                    "employee_code": "670021",
+                    "employee_name": "มาโนช",
+                    "employee_last_name": "พาร์ทไทม์"
+                  },
+                  "20241218F779D0A4CD59": {
+                    "employee_id": "20241218F779D0A4CD59",
+                    "employee_code": "670012",
+                    "employee_name": "พายุ",
+                    "employee_last_name": "รายเดือน"
+                  },
+                  "20241218FA1B74D6CF20": {
+                    "employee_id": "20241218FA1B74D6CF20",
+                    "employee_code": "670005",
+                    "employee_name": "ธิดา",
+                    "employee_last_name": "รายวัน"
+                  },
+                  "20241218FD4E33ECE2CE": {
+                    "employee_id": "20241218FD4E33ECE2CE",
+                    "employee_code": "670017",
+                    "employee_name": "ชาตรี",
+                    "employee_last_name": "รายเดือน"
+                  },
+                  "202504306688E0A90708": {
+                    "employee_id": "202504306688E0A90708",
+                    "employee_code": "680006",
+                    "employee_name": "ณิชา",
+                    "employee_last_name": "พงศกรกิตติ"
+                  }
+                }
+              },
+              "20241218085BD1031FD7": {
+                "name": "แผนกขาย",
+                "employees": {
+                  "20250314744B72F03BC5": {
+                    "employee_id": "20250314744B72F03BC5",
+                    "employee_code": "680001",
+                    "employee_name": "บัลลังค์",
+                    "employee_last_name": "พิกุลเทพ"
+                  },
+                  "20250430108B02830EAF": {
+                    "employee_id": "20250430108B02830EAF",
+                    "employee_code": "680005",
+                    "employee_name": "ณิชา",
+                    "employee_last_name": "พงศกรกิตติ"
+                  },
+                  "20250430686DF166315E": {
+                    "employee_id": "20250430686DF166315E",
+                    "employee_code": "680009",
+                    "employee_name": "ณิชา",
+                    "employee_last_name": "พงศกรกิตติ"
+                  },
+                  "202504306CB6CA88A164": {
+                    "employee_id": "202504306CB6CA88A164",
+                    "employee_code": "680007",
+                    "employee_name": "ณิชา",
+                    "employee_last_name": "พงศกรกิตติ"
+                  },
+                  "20250430DD187D7D5E4E": {
+                    "employee_id": "20250430DD187D7D5E4E",
+                    "employee_code": "680004",
+                    "employee_name": "ณิชา",
+                    "employee_last_name": "พงศกรกิตติ"
+                  }
+                }
+              },
+              "202412187871D8BF8469": {
+                "name": "แผนกบัญชี",
+                "employees": {
+                  "20250429897427C4C258": {
+                    "employee_id": "20250429897427C4C258",
+                    "employee_code": "680003",
+                    "employee_name": "บอส",
+                    "employee_last_name": "สึ"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

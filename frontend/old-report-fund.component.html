@@ -1,0 +1,211 @@
+<div id="angular-material" class="page-layout simple tabbed">
+    <div class="header accent p-24 h-160" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="row"
+         fxLayoutAlign.gt-xs="space-between center">
+
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="column" fxLayoutAlign.gt-xs="center start">
+            <div fxLayout="row" fxLayoutAlign="start center" fxShow fxHide.lt-md>
+                <span class="secondary-text">{{ 'REP_PATH' | translate }}</span>
+                <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+                <span class="secondary-text">{{ 'REP_GROUPFUND' | translate }}</span>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="start center" class="mt-16">
+                <div fxLayout="row" fxLayoutAlign="start center" class="h1 tooltip-header-hover"> {{ 'REP_FUNDREPORT' |translate }}
+                    <button class="tooltip-header" (click)="toggleSidebarOpen('tooltipPanel', 'REP_FUNDREPORT')">
+                        <span class="text">?</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="card-input-container">
+            <div class="card-input-header">{{ 'BTN_SEARCH' | translate }}</div>
+            <div class="card-input-body">
+                <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="8px">
+                    <div fxLayout="column" fxFlex>
+                        <label>{{ 'LOV_COMPANY' | translate }}</label>
+                        <nz-tree-select [nzNodes]="orgsNodes" nzPlaceHolder="{{'LOV_ALL' | translate}}"
+                                        [(ngModel)]="orgValue" (ngModelChange)="orgChange($event)"
+                                        [nzDefaultExpandAll]="true"
+                                        [nzAllowClear]="true" [nzDropdownStyle]="{ 'max-height': '280px' }">
+                        </nz-tree-select>
+                    </div>
+                    <div fxLayout="column" fxFlex>
+                        <label>{{ 'REP_FUND' | translate }}</label>
+                        <nz-tree-select
+                            [nzNodes]="fundList"
+                            [(ngModel)]="selectedFundIds"
+                            nzMultiple
+                            nzCheckable="true"
+                            [nzAllowClear]="true"
+                            [nzDefaultExpandAll]="true"
+                            [nzDropdownStyle]="{ 'max-height': '400px' }"
+                            [nzPlaceHolder]="'เลือกกองทุน'"
+                            [nzShowSearch]="true"
+                            [nzDropdownMatchSelectWidth]="false"
+                            [nzMaxTagCount]="3"
+                            [nzMaxTagPlaceholder]="selectedFundsTemplate">
+                        </nz-tree-select>
+                    </div>
+
+                    <div fxLayout="column" fxFlex>
+                        <label>{{ 'LOV_MONTH' | translate }}</label>
+                        <nz-range-picker
+                            [ngModel]="[filterData.start_month, filterData.end_month]"
+                            nzMode="month"
+                            [nzFormat]="'MMMM yyyy'"
+                            (ngModelChange)="onMonthRangeChange($event)"
+                            [nzPlaceHolder]="['เดือนเริ่มต้น', 'เดือนสิ้นสุด']"
+                            [nzDisabledDate]="disabledDate"
+                            [nzShowToday]="false">
+                        </nz-range-picker>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card-input-footer">
+                <div fxLayout="row" fxLayoutAlign="end end">
+                    <div fxLayout="column" class="mr-8">
+                        <button mat-raised-button color="primary" (click)="downloadFile('pdf')"
+                                [disabled]="rows.length > 0 && columns.length > 0 ? false : true">
+                            PDF
+                            <mat-icon fxShow fxHide.lt-md>picture_as_pdf</mat-icon>
+                        </button>
+                    </div>
+                    <div fxLayout="column" class="mr-8">
+                        <button mat-raised-button class="green fuse-white-fg"
+                                (click)="downloadFile('excel')"
+                                [disabled]="rows.length > 0 && columns.length > 0 ? false : true">
+                            <span>Excel</span>
+                            <mat-icon fxShow fxHide.lt-md>border_all</mat-icon>
+                        </button>
+                    </div>
+                    <div fxLayout="column">
+                        <button mat-raised-button color="accent" (click)="getData()">
+                            <span>{{ 'BTN_SEARCH' | translate }}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="isLoading" class="loading-overlay">
+            <nz-spin nzSimple></nz-spin>
+        </div>
+        <div *ngIf="!isLoading && (!reportData || !reportData.funds || reportData.funds.length === 0)" class="no-data-message">
+            <nz-empty nzNotFoundContent="ไม่พบข้อมูล"></nz-empty>
+        </div>
+        <div *ngIf="!isLoading && reportData && reportData.funds && reportData.funds.length > 0">
+            <!-- Report Header
+            <div class="report-header">
+                <h2>{{ reportData.report_title }}</h2>
+                <div class="report-info">
+                    <p>{{ 'COMPANY' | translate }}: {{ reportData.company_name }}</p>
+                    <p>{{ 'BRANCH' | translate }}: {{ reportData.branch_name }}</p>
+                    <p>{{ 'PERIOD' | translate }}: {{ reportData.start_month }} - {{ reportData.end_month }}</p>
+                </div>
+            </div> -->
+
+            <!-- Fund Reports -->
+            <div *ngFor="let fund of reportData.funds" class="fund-report">
+                <h3>{{ fund.fund_name }}</h3>
+                
+                <!-- Fund Table -->
+                <nz-table 
+                    [nzData]="fund.rows"
+                    nzBordered
+                    [nzFrontPagination]="false"
+                    [nzShowPagination]="false"
+                    [nzScroll]="{ x: '100%' }">
+                    <thead>
+                        <tr>
+                            <th *ngFor="let column of fund.columns">{{ column }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of fund.rows">
+                            <td>{{ row.employee_code }}</td>
+                            <td>{{ row.employee_name }} - {{ row.employee_lastname }}</td>
+                            <td>{{ row.date }}</td>
+                            <td>{{ row.account_number }}</td>
+                            <td class="text-right">{{ row.employee_contribution | number:'1.2-2' }}</td>
+                            <td class="text-right">{{ row.company_contribution | number:'1.2-2' }}</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4" class="text-right">
+                                <strong>{{ 'TOTAL_EMPLOYEES' | translate }}: {{ fund.summary.total_employees }}</strong>
+                            </td>
+                            <td class="text-right">
+                                <strong>{{ fund.summary.total_employee_contribution | number:'1.2-2' }}</strong>
+                            </td>
+                            <td class="text-right">
+                                <strong>{{ fund.summary.total_company_contribution | number:'1.2-2' }}</strong>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </nz-table>
+            </div>
+
+            <!-- Report Summary -->
+            <div class="report-summary">
+                <h3>{{ 'REPORT_SUMMARY' | translate }}</h3>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <label>{{ 'TOTAL_ALL_EMPLOYEES' | translate }}:</label>
+                        <span>{{ reportData.report_summary.total_all_employees }}</span>
+                    </div>
+                    <div class="summary-item">
+                        <label>{{ 'TOTAL_ALL_EMPLOYEE_CONTRIBUTION' | translate }}:</label>
+                        <span>{{ reportData.report_summary.total_all_employee_contribution | number:'1.2-2' }}</span>
+                    </div>
+                    <div class="summary-item">
+                        <label>{{ 'TOTAL_ALL_COMPANY_CONTRIBUTION' | translate }}:</label>
+                        <span>{{ reportData.report_summary.total_all_company_contribution | number:'1.2-2' }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #downloadExcelNoti let-notification>
+        <ng-container *ngIf="notificationType === 'full'">
+            <div class="minimize-button">
+                <button mat-icon-button (click)="minimizeNotification('mini')"
+                        nzTooltipTitle="กดเพื่อย่อหน้าต่าง" nzTooltipPlacement="topRight" nz-tooltip>
+                    <mat-icon>minimize</mat-icon>
+                </button>
+            </div>
+            <div fxLayout="column">
+                <div fxLayout="row" *ngIf="progress.percentage !== 100">
+                    <nz-spin nzSimple></nz-spin>
+                    <span style="padding-left: 8px;">{{ 'REP_DOWNLOADINGEXCEL' | translate }}
+                        <b>{{ progress.name }}</b>
+                        ({{ progress.curr + '/' + this.branchesInOrg.length }})</span>
+                </div>
+            </div>
+            <div *ngIf="progress.percentage === 100" fxLayout="row" fxLayoutAlign="space-between center"
+                 style="margin-right: 16px;">
+                <span>{{ 'REP_DOWNLOADSUCCEED' | translate }}</span>
+                <button nz-button nzType="default" nzSize="small"
+                        (click)="notification.close()">
+                    <span>{{ 'BTN_CONFIRM' | translate }}</span>
+                </button>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="notificationType === 'mini'">
+            <div class="minimize-button">
+                <button nzTooltipTitle="{{'LOV_DETAIL' | translate}}" nzTooltipPlacement="left"
+                        nz-tooltip mat-icon-button (click)="minimizeNotification('full')"
+                        color="accent">
+                    <mat-icon style="animation: rotation 2s infinite linear">settings</mat-icon>
+                </button>
+            </div>
+        </ng-container>
+    </ng-template>
+    <ng-template #selectedFundsTemplate let-selectedList>
+        +{{selectedList.length - 3}} กองทุน
+    </ng-template>
+</div>
+
+
